@@ -29,10 +29,13 @@ html{
 
 body{
     background: #eee;
+    overflow-x: hidden;
 }
 
 section{
-    padding: 2rem 9%;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .heading{
@@ -72,12 +75,15 @@ section{
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 1000;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+}
+
+.header .flex{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 9%;
-    background: #fff;
-    box-shadow: var(--box-shadow);
+    position: relative;
 }
 
 .header .logo{
@@ -109,7 +115,7 @@ section{
     color: var(--black);
     cursor: pointer;
     font-size: 2rem;
-    margin-right: .3rem;
+    margin-left: .3rem;
     text-align: center;
 }
 .header .icons div:hover{
@@ -454,27 +460,81 @@ section{
 .review .review-slider .box .stars i{
     color:var(--orange);
     font-size: 1.7rem;
+}
 
+.blogs .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+.blogs .box-container .box{
+    overflow: hidden;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    background:#fff;
+}
+.blogs .box-container .box img{
+    height:25rem;
+    width:100%;
+    object-fit: cover;
+}
 
+.blogs .box-container .box .content{
+    padding:2rem;
+}
+
+.blogs .box-container .box .content .icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: var(--border);
+}
+
+.blogs .box-container .box .content .icons a{
+    color:var(--light-color);
+    font-size: 1.5rem;
+}
+
+.blogs .box-container .box .content .icons a:hover{
+    color:var(--black);
+}
+
+.blogs .box-container .box .content .icons a i{
+    color:var(--orange);
+    padding-right: .5rem;
+}
+.blogs .box-container .box .content h3{
+    line-height: 1.8;
+    color:var(--black);
+    font-size: 2.2rem;
+    padding:.5rem 0;
+}
+
+.blogs .box-container .box .content p{
+    line-height: 1.8;
+    color:var(--light-color);
+    font-size: 1.5rem;
+    padding:.5rem 0;
+}
 
 /* media queries */
+
 @media (max-width:991px){
 
     html{
         font-size: 55%;
     }
-    .header{
-        padding: 2rem;
-    }
-    section{
-        padding: 2rem;
-    }
+    
 }
 
 @media (max-width:768px){
+
     #menu-btn{
         display: inline-block;
     }
+
     .header .search-form{
         width: 90%;
     }
@@ -504,10 +564,11 @@ section{
         font-size: 55%;
     }
 
+    
     .heading{
         font-size: 2.5rem;
     }
 }
 
-
+}
 
